@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Task 3</title>
+  <link href="../cog366.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  
+  <div class="container">
+    
+    <div class="block">
+      <h1>COG366 Demo Page</h1>
+        <p>Following is a demo of the <tt>task3.pl</tt> program.</p>
+
+      <div class="block">
+        <h2></h2>
+          <p>
+?- initial_state(State), goal_0(Goal), plan(State, Goal, Steps).<br>
+State = [on(b1, table), on(b2, table), on(b3, table), on(b4, table), on(b5, table), on(b6, table), on(b7, table), on(b8, table)],<br>
+Goal = [on(b1, table), on(b2, b3), on(b3, b1), on(b4, b5), on(b5, b6), on(b6, table), on(b7, b4), on(b8, b7)],<br>
+Steps = [stack(b3, on(b1)), stack(b2, on(b3)), stack(b5, on(b6)), stack(b4, on(b5)), stack(b7, on(b4)), stack(b8, on(b7))] ;<br>
+State = [on(b1, table), on(b2, table), on(b3, table), on(b4, table), on(b5, table), on(b6, table), on(b7, table), on(b8, table)],<br>
+Goal = [on(b1, table), on(b2, b3), on(b3, b1), on(b4, b5), on(b5, b6), on(b6, table), on(b7, b4), on(b8, b7)],<br>
+Steps = [stack(b5, on(b6)), stack(b4, on(b5)), stack(b7, on(b4)), stack(b8, on(b7)), stack(b3, on(b1)), stack(b2, on(b3))] ;<br>
+false.<br>
+<br>
+?- initial_state(State), goal_1(Goal), plan(State, Goal, Steps).<br>
+State = [on(b1, table), on(b2, table), on(b3, table), on(b4, table), on(b5, table), on(b6, table), on(b7, table), on(b8, table)],<br>
+Goal = [on(b2, table), on(b3, b2), on(b4, b3), on(b1, b4), on(b8, b7), on(b7, table), on(b6, b8), on(b5, b6)],<br>
+Steps = [stack(b3, on(b2)), stack(b4, on(b3)), stack(b1, on(b4)), stack(b8, on(b7)), stack(b6, on(b8)), stack(b5, on(b6))] ;<br>
+State = [on(b1, table), on(b2, table), on(b3, table), on(b4, table), on(b5, table), on(b6, table), on(b7, table), on(b8, table)],<br>
+Goal = [on(b2, table), on(b3, b2), on(b4, b3), on(b1, b4), on(b8, b7), on(b7, table), on(b6, b8), on(b5, b6)],<br>
+Steps = [stack(b8, on(b7)), stack(b6, on(b8)), stack(b5, on(b6)), stack(b3, on(b2)), stack(b4, on(b3)), stack(b1, on(b4))] ;<br>
+false.<br>
+<br>
+?- initial_state(State), goal_2(Goal), plan(State, Goal, Steps).<br>
+State = [on(b1, table), on(b2, table), on(b3, table), on(b4, table), on(b5, table), on(b6, table), on(b7, table), on(b8, table)],<br>
+Goal = [on(b1, b3), on(b2, b4), on(b3, table), on(b4, table), on(b5, b1), on(b6, b5), on(b7, b8), on(b8, table)],<br>
+Steps = [stack(b1, on(b3)), stack(b5, on(b1)), stack(b6, on(b5)), stack(b2, on(b4)), stack(b7, on(b8))] ;<br>
+State = [on(b1, table), on(b2, table), on(b3, table), on(b4, table), on(b5, table), on(b6, table), on(b7, table), on(b8, table)],<br>
+Goal = [on(b1, b3), on(b2, b4), on(b3, table), on(b4, table), on(b5, b1), on(b6, b5), on(b7, b8), on(b8, table)],<br>
+Steps = [stack(b2, on(b4)), stack(b1, on(b3)), stack(b5, on(b1)), stack(b6, on(b5)), stack(b7, on(b8))] ;<br>
+State = [on(b1, table), on(b2, table), on(b3, table), on(b4, table), on(b5, table), on(b6, table), on(b7, table), on(b8, table)],<br>
+Goal = [on(b1, b3), on(b2, b4), on(b3, table), on(b4, table), on(b5, b1), on(b6, b5), on(b7, b8), on(b8, table)],<br>
+Steps = [stack(b7, on(b8)), stack(b1, on(b3)), stack(b5, on(b1)), stack(b6, on(b5)), stack(b2, on(b4))].<br>
+          </p>
+      </div>
+    </div>
+  </div>
+    
+</body>
+
+</html>

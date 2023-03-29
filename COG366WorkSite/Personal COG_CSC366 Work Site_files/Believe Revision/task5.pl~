@@ -1,0 +1,65 @@
+station("", Transfers) :- Transfers = [].
+
+% Station facts, currently only including Manhattan stations
+
+station("Times Square–42nd Street", Transfers) :- Transfers = [1, 2, 3, 7, a, c, e, n, q, r, w, s].
+station("Port Authority Bus Terminal", Transfers) :- Transfers = [1, 2, 3, 7, a, c, e, n, q, r, w, s].
+
+station("South Ferry", Transfers) :- Transfers = [1, r, w].
+station("Whitehall Street", Transfers) :- Transfers = [1, r, w].
+
+station("Lexington Av", Transfers) :- Transfers = [4, 5, 6, n, r, w].
+station("59th Street", Transfers) :- Transfers = [4, 5, 6, n, r, w].
+
+station("Lexington Avenue", Transfers) :- Transfers = [6, e, m].
+station("51st Street", Transfers) :- Transfers = [6, e, m].
+
+station("Grand Central–42nd Street", Transfers) :- Transfers = [4, 5, 6, 7, s].
+station("Fulton Street", Transfers) :- Transfers = [2, 3, 4, 5, a, c, j, z].
+station("Delancey Street", Transfers) :- Transfers = [f, j, m, z].
+station("Essex Street", Transfers) :- Transfers = [f, j, m, z].
+
+station("Chambers Street–World Trade Center", Transfers) :- Transfers = [2, 3, a, c, e, r, w].
+station("Park Place", Transfers) :- Transfers = [2, 3, a, c, e, r, w].
+station("Cortlandt Street", Transfers) :- Transfers = [2, 3, a, c, e, r, w].
+
+station("Brooklyn Bridge–City Hall/Chambers Street", Transfers) :- Transfers = [4, 5, 6, j, z].
+station("Broadway–Lafayette Street/Bleecker Street", Transfers) :- Transfers = [6, b, d, f, m].
+station("168th Street", Transfers) :- Transfers = [1, a, c].
+station("59th Street–Columbus Circle", Transfers) :- Transfers = [1, a, b, c, d].
+station("42nd Street–Bryant Park/Fifth Avenue", Transfers) :- Transfers = [7, b, d, f, m].
+station("34th Street–Herald Square", Transfers) :- Transfers = [b, d, f, m, n, q, r, w].
+station("14th Street/Sixth Avenue", Transfers) :- Transfers = [1, 2, 3, f, l, m].
+station("14th Street/Eighth Avenue", Transfers) :- Transfers = [a, c, e, l].
+station("14th Street–Union Square", Transfers) :- Transfers = [4, 5, 6, l, n, q, r, w].
+station("Canal St", Transfers) :- Transfers = [6, j, n, q, r, w, z].
+
+
+station("5 Av/59 St", Transfers) :- Transfers = [r].
+station("57 St-7 Av", Transfers) :- Transfers = [r].
+station("49 St", Transfers) :- Transfers = [r].
+station("Times Square- 42 St", Transfers) :- Transfers = [r].
+station("34 St Herald Square", Transfers) :- Transfers = [r].
+station("28 St", Transfers) :- Transfers = [r].
+station("23 St", Transfers) :- Transfers = [r].
+station("8 St-NYU", Transfers) :- Transfers = [r].
+station("Prince St", Transfers) :- Transfers = [r].
+station("City Hall", Transfers) :- Transfers = [r].
+station("Cortlandt St", Transfers) :- Transfers = [r].
+station("Rector St", Transfers) :- Transfers = [r].
+station("Whitehall St South Ferry", Transfers) :- Transfers = [r].
+
+train(r).
+
+route(r, Stops) :-
+   Stops = ["Court St", "Jay St MetroTech", "DeKalb Av",
+             "Atlantic Av - Barclays Ctr", "Union St",
+             "4 Av - 9 St", "Prospect Av", "25 St",
+             "36 St", "45 St", "53 St", "59 St",
+             "Bay Ridge Av", "77 St", "86 St",
+             "Bay Ridge 95 St"].
+
+connects(Train, Station1, Station2) :-
+    route(Train, Stops),
+    member(Station1, Stops),
+    member(Station2, Stops).
